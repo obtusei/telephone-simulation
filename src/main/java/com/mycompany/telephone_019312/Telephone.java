@@ -1,7 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+    
  */
+
 package com.mycompany.telephone_019312;
 
 import java.awt.Color;
@@ -735,6 +735,36 @@ public class Telephone extends javax.swing.JFrame {
 
     private void end2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end2ActionPerformed
         // TODO add your handling code here:
+        call2.setEnabled(true);
+        end2.setEnabled(false);
+        state2.setText("Ready");
+        call_2 = true;
+        if(calling[2] == 1){
+            call_1 = true;
+            state1.setText("Ready");
+            call1.setEnabled(true);
+            end1.setEnabled(false);
+        }if(calling[2] == 3){
+            call_3 = true;
+            state3.setText("Ready");
+            call3.setEnabled(true);
+            end3.setEnabled(false);
+        }if(calling[2] == 4){
+            call_4 = true;
+            state4.setText("Ready");
+            call4.setEnabled(true);
+            end4.setEnabled(false);
+        }if(calling[2] == 5){
+            call_5 = true;
+            state5.setText("Ready");
+            call5.setEnabled(true);
+            end5.setEnabled(false);
+        }if(calling[2] == 6){
+            call_6 = true;
+            state6.setText("Ready");
+            call6.setEnabled(true);
+            end6.setEnabled(false);
+        }
     }//GEN-LAST:event_end2ActionPerformed
 
     private void call3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_call3ActionPerformed
@@ -752,56 +782,56 @@ public class Telephone extends javax.swing.JFrame {
                 int[] numbers = {3, 2};
                 makeACall(
                         callLen,
-                        call_1,
                         call_3,
+                        call_2,
                         numbers,
-                        label1,
                         label3,
-                        call1,
+                        label2,
                         call3,
-                        end1,
-                        end3
+                        call2,
+                        end3,
+                        end2
                 );
             }else if("4".matches(s) && call_4){
-                int[] numbers = {1, 4};
+                int[] numbers = {3, 4};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_3,
                         call_4,
                         numbers,
-                        label1,
+                        label3,
                         label4,
-                        call1,
+                        call3,
                         call4,
-                        end1,
+                        end3,
                         end4
                 );
             }else if("5".matches(s) && call_5){
-                int[] numbers = {1, 5};
+                int[] numbers = {3, 5};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_3,
                         call_5,
                         numbers,
-                        label1,
+                        label3,
                         label5,
-                        call1,
+                        call3,
                         call5,
-                        end1,
+                        end3,
                         end5
                 );
             }else if("6".matches(s) && call_6){
-                int[] numbers = {1, 6};
+                int[] numbers = {3, 6};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_3,
                         call_6,
                         numbers,
-                        label1,
+                        label3,
                         label6,
-                        call1,
+                        call3,
                         call6,
-                        end1,
+                        end3,
                         end6
                 );
             }
@@ -815,74 +845,103 @@ public class Telephone extends javax.swing.JFrame {
 
     private void end3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end3ActionPerformed
         // TODO add your handling code here:
+        call3.setEnabled(true);
+        end3.setEnabled(false);
+        state3.setText("Ready");
+        call_3 = true;
+        if(calling[3] == 1){
+            call_1 = true;
+            state1.setText("Ready");
+            call1.setEnabled(true);
+            end1.setEnabled(false);
+        }if(calling[3] == 2){
+            call_2 = true;
+            state2.setText("Ready");
+            call2.setEnabled(true);
+            end2.setEnabled(false);
+        }if(calling[3] == 4){
+            call_4 = true;
+            state4.setText("Ready");
+            call4.setEnabled(true);
+            end4.setEnabled(false);
+        }if(calling[3] == 5){
+            call_5 = true;
+            state5.setText("Ready");
+            call5.setEnabled(true);
+            end5.setEnabled(false);
+        }if(calling[3] == 6){
+            call_6 = true;
+            state6.setText("Ready");
+            call6.setEnabled(true);
+            end6.setEnabled(false);
+        }
     }//GEN-LAST:event_end3ActionPerformed
 
     private void call4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_call4ActionPerformed
         // TODO add your handling code here:
-        Object calls[] = {"2", "3", "4", "5", "6"};
-        System.out.println("CALL 1 selected");
+        Object calls[] = {"1", "2", "3", "5", "6"};
         String s = call(calls);
         int callLen = callLength();
         if (!s.isEmpty() && callLen != 0){
             total_processed_call++;
             totalProcessedCalls.setText(Integer.toString(total_processed_call));
-            if("2".matches(s) && call_2){
-                int[] numbers = {1, 2};
-                makeACall(callLen,call_1,call_2,numbers,label1,label2,call1,call2,end1,end2);
-            }else if("3".matches(s) && call_3){
-                int[] numbers = {1, 3};
+            if("1".matches(s) && call_1){
+                int[] numbers = {4, 1};
+                makeACall(callLen,call_4,call_1,numbers,label4,label1,call4,call1,end4,end1);
+            }else if("2".matches(s) && call_2){
+                int[] numbers = {4, 3};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_4,
+                        call_2,
+                        numbers,
+                        label4,
+                        label2,
+                        call4,
+                        call2,
+                        end4,
+                        end2
+                );
+            }else if("3".matches(s) && call_3){
+                int[] numbers = {4, 3};
+                makeACall(
+                        callLen,
+                        call_4,
                         call_3,
                         numbers,
-                        label1,
+                        label4,
                         label3,
-                        call1,
+                        call4,
                         call3,
-                        end1,
+                        end4,
                         end3
                 );
-            }else if("4".matches(s) && call_4){
-                int[] numbers = {1, 4};
-                makeACall(
-                        callLen,
-                        call_1,
-                        call_4,
-                        numbers,
-                        label1,
-                        label4,
-                        call1,
-                        call4,
-                        end1,
-                        end4
-                );
             }else if("5".matches(s) && call_5){
-                int[] numbers = {1, 5};
+                int[] numbers = {4, 5};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_4,
                         call_5,
                         numbers,
-                        label1,
+                        label4,
                         label5,
-                        call1,
+                        call4,
                         call5,
-                        end1,
+                        end4,
                         end5
                 );
             }else if("6".matches(s) && call_6){
-                int[] numbers = {1, 6};
+                int[] numbers = {4, 6};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_4,
                         call_6,
                         numbers,
-                        label1,
+                        label4,
                         label6,
-                        call1,
-                        call6,
-                        end1,
+                        call4,
+                        call4,
+                        end4,
                         end6
                 );
             }
@@ -896,74 +955,103 @@ public class Telephone extends javax.swing.JFrame {
 
     private void end4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end4ActionPerformed
         // TODO add your handling code here:
+        call4.setEnabled(true);
+        end4.setEnabled(false);
+        state4.setText("Ready");
+        call_4 = true;
+        if(calling[4] == 1){
+            call_1 = true;
+            state1.setText("Ready");
+            call1.setEnabled(true);
+            end1.setEnabled(false);
+        }if(calling[4] == 2){
+            call_2 = true;
+            state2.setText("Ready");
+            call2.setEnabled(true);
+            end2.setEnabled(false);
+        }if(calling[4] == 3){
+            call_3 = true;
+            state3.setText("Ready");
+            call3.setEnabled(true);
+            end3.setEnabled(false);
+        }if(calling[4] == 5){
+            call_5 = true;
+            state5.setText("Ready");
+            call5.setEnabled(true);
+            end5.setEnabled(false);
+        }if(calling[4] == 6){
+            call_6 = true;
+            state6.setText("Ready");
+            call6.setEnabled(true);
+            end6.setEnabled(false);
+        }
     }//GEN-LAST:event_end4ActionPerformed
 
     private void call5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_call5ActionPerformed
         // TODO add your handling code here:
-        Object calls[] = {"2", "3", "4", "5", "6"};
-        System.out.println("CALL 1 selected");
+        Object calls[] = {"1", "2", "3", "4", "6"};
         String s = call(calls);
         int callLen = callLength();
         if (!s.isEmpty() && callLen != 0){
             total_processed_call++;
             totalProcessedCalls.setText(Integer.toString(total_processed_call));
             if("2".matches(s) && call_2){
-                int[] numbers = {1, 2};
-                makeACall(callLen,call_1,call_2,numbers,label1,label2,call1,call2,end1,end2);
+                int[] numbers = {5, 2};
+                makeACall(callLen,call_5,call_2,numbers,label5,label2,call5,call2,end5,end2);
             }else if("3".matches(s) && call_3){
-                int[] numbers = {1, 3};
+                int[] numbers = {5, 3};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_5,
                         call_3,
                         numbers,
-                        label1,
+                        label5,
                         label3,
-                        call1,
+                        call5,
                         call3,
-                        end1,
+                        end5,
                         end3
                 );
             }else if("4".matches(s) && call_4){
-                int[] numbers = {1, 4};
+                int[] numbers = {5, 4};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_5,
                         call_4,
                         numbers,
-                        label1,
+                        label5,
                         label4,
-                        call1,
+                        call5,
                         call4,
-                        end1,
+                        end5,
                         end4
                 );
-            }else if("5".matches(s) && call_5){
-                int[] numbers = {1, 5};
+            }else if("1".matches(s) && call_1){
+                int[] numbers = {5, 1};
                 makeACall(
                         callLen,
-                        call_1,
                         call_5,
+                        call_1,
                         numbers,
-                        label1,
                         label5,
-                        call1,
+                        label1,
                         call5,
-                        end1,
-                        end5
+                        call1,
+                        end5,
+                        end1
                 );
             }else if("6".matches(s) && call_6){
-                int[] numbers = {1, 6};
+                int[] numbers = {5, 6};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_5,
                         call_6,
                         numbers,
-                        label1,
+                        label5,
                         label6,
-                        call1,
+                        call5,
                         call6,
-                        end1,
+                        end5,
                         end6
                 );
             }
@@ -977,75 +1065,105 @@ public class Telephone extends javax.swing.JFrame {
 
     private void end5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end5ActionPerformed
         // TODO add your handling code here:
+        call5.setEnabled(true);
+        end5.setEnabled(false);
+        state5.setText("Ready");
+        call_5 = true;
+        if(calling[5] == 2){
+            call_2 = true;
+            state2.setText("Ready");
+            call2.setEnabled(true);
+            end2.setEnabled(false);
+        }if(calling[5] == 3){
+            call_3 = true;
+            state3.setText("Ready");
+            call3.setEnabled(true);
+            end3.setEnabled(false);
+        }if(calling[5] == 4){
+            call_4 = true;
+            state4.setText("Ready");
+            call4.setEnabled(true);
+            end4.setEnabled(false);
+        }if(calling[5] == 1){
+            call_1 = true;
+            state1.setText("Ready");
+            call1.setEnabled(true);
+            end1.setEnabled(false);
+        }if(calling[5] == 6){
+            call_6 = true;
+            state6.setText("Ready");
+            call6.setEnabled(true);
+            end6.setEnabled(false);
+        }
+        
     }//GEN-LAST:event_end5ActionPerformed
 
     private void call6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_call6ActionPerformed
         // TODO add your handling code here:
-        Object calls[] = {"2", "3", "4", "5", "6"};
-        System.out.println("CALL 1 selected");
+        Object calls[] = {"1","2", "3", "4", "5"};
         String s = call(calls);
         int callLen = callLength();
         if (!s.isEmpty() && callLen != 0){
             total_processed_call++;
             totalProcessedCalls.setText(Integer.toString(total_processed_call));
             if("2".matches(s) && call_2){
-                int[] numbers = {1, 2};
-                makeACall(callLen,call_1,call_2,numbers,label1,label2,call1,call2,end1,end2);
+                int[] numbers = {6, 2};
+                makeACall(callLen,call_6,call_2,numbers,label6,label2,call6,call2,end6,end2);
             }else if("3".matches(s) && call_3){
-                int[] numbers = {1, 3};
+                int[] numbers = {6, 3};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_6,
                         call_3,
                         numbers,
-                        label1,
+                        label6,
                         label3,
-                        call1,
+                        call6,
                         call3,
-                        end1,
+                        end6,
                         end3
                 );
             }else if("4".matches(s) && call_4){
-                int[] numbers = {1, 4};
+                int[] numbers = {6, 4};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_6,
                         call_4,
                         numbers,
-                        label1,
+                        label6,
                         label4,
-                        call1,
+                        call6,
                         call4,
-                        end1,
+                        end6,
                         end4
                 );
             }else if("5".matches(s) && call_5){
-                int[] numbers = {1, 5};
+                int[] numbers = {6, 5};
                 makeACall(
                         callLen,
-                        call_1,
+                        call_6,
                         call_5,
                         numbers,
-                        label1,
+                        label6,
                         label5,
-                        call1,
+                        call6,
                         call5,
-                        end1,
+                        end6,
                         end5
                 );
-            }else if("6".matches(s) && call_6){
-                int[] numbers = {1, 6};
+            }else if("1".matches(s) && call_1){
+                int[] numbers = {6, 1};
                 makeACall(
                         callLen,
-                        call_1,
                         call_6,
+                        call_1,
                         numbers,
-                        label1,
                         label6,
-                        call1,
+                        label1,
                         call6,
-                        end1,
-                        end6
+                        call1,
+                        end6,
+                        end1
                 );
             }
             else{
@@ -1058,6 +1176,36 @@ public class Telephone extends javax.swing.JFrame {
 
     private void end6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end6ActionPerformed
         // TODO add your handling code here:
+        call6.setEnabled(true);
+        end6.setEnabled(false);
+        state6.setText("Ready");
+        call_6 = true;
+        if(calling[6] == 2){
+            call_2 = true;
+            state2.setText("Ready");
+            call2.setEnabled(true);
+            end2.setEnabled(false);
+        }if(calling[6] == 3){
+            call_3 = true;
+            state3.setText("Ready");
+            call3.setEnabled(true);
+            end3.setEnabled(false);
+        }if(calling[6] == 4){
+            call_4 = true;
+            state4.setText("Ready");
+            call4.setEnabled(true);
+            end4.setEnabled(false);
+        }if(calling[6] == 5){
+            call_5 = true;
+            state5.setText("Ready");
+            call5.setEnabled(true);
+            end5.setEnabled(false);
+        }if(calling[6] == 1){
+            call_1 = true;
+            state1.setText("Ready");
+            call1.setEnabled(true);
+            end1.setEnabled(false);
+        }
     }//GEN-LAST:event_end6ActionPerformed
 
     /**
